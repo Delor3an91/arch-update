@@ -104,7 +104,9 @@ arch-update --tray --enable
 systemctl --user enable --now arch-update-tray.service
 ```
 
-Si vous utilisez un gestionnaire de fenêtre ou un compositeur Wayland, vous pouvez plutôt ajouter la commande `arch-update --tray` à vôtre fichier de configuration.
+Si vous utilisez un gestionnaire de fenêtre ou un compositeur Wayland, vous pouvez plutôt ajouter la commande `arch-update --tray` à vos applications "auto-start" dans votre fichier de configuration.
+
+**Si l'applet systray ne démarre pas au démarrage du système malgré tout**, veuillez lire [ce chapitre](#lapplet-systray-ne-démarre-pas-au-démarrage-du-système).
 
 L'icône du systray changera automatiquement en fonction de l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Lorsque vous cliquez dessus, elle lance `arch-update` via le fichier [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop).
 
@@ -137,19 +139,23 @@ C'est l'icône à droite de celle du wifi dans la capture d'écran ci-dessous:
 
 ![systray-icon](https://github.com/Antiz96/arch-update/assets/53110319/fe032e68-3582-470a-9e6d-b51a9ea8c1ba)
 
-Avec [le systemd timer](#le-timer-systemd) activé, `Arch-Update` vérifie automatiquement les mises à jour au démarrage du système puis une fois chaque heure. La vérification peut être manuellement déclenchée en exécutant la commande `arch-update --check` ou en faisant un clic droit sur l'applet systray puis en cliquant sur l'entrée `Vérifier les mises à jour` depuis le menu :
+Avec [le systemd timer](#le-timer-systemd) activé, `Arch-Update` vérifie automatiquement les mises à jour au démarrage du système puis une fois chaque heure. La vérification peut être manuellement déclenchée en exécutant la commande `arch-update --check` ou en faisant un clic droit sur l'icône du systray puis en cliquant sur l'entrée `Vérifier les mises à jour` depuis le menu :
 
-![check_menu_fr](https://github.com/user-attachments/assets/e16a3fc1-bce6-4509-8aeb-a85784354783)
+![check_menu_fr](https://github.com/user-attachments/assets/b0b7730b-0196-4973-ac90-bceb8a74845e)
 
-Si de nouvelles mises à jour sont disponibles, l'icône systray affichera un cercle rouge. Vous pouvez alors voir la liste des mises à jour disponibles en passant votre souris sur l'icône de l'applet systray :
+Si de nouvelles mises à jour sont disponibles, l'icône du systray affichera un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles sera envoyée (nécessite [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "paquet libnotify") et un serveur de notification en cours d'exécution) :
 
-![tooltip_fr](https://github.com/user-attachments/assets/ccad758a-bf3a-4e1d-aa9c-17470488f761)
+![notif_fr](https://github.com/user-attachments/assets/56d72147-bde4-492b-8ad1-20caed9f22a9)
 
-De plus, une notification de bureau indiquant le nombre de mises à jour disponibles sera envoyée s'il y a de nouvelles mises à jour depuis le dernier check (nécessite [libnotify](https://archlinux.org/packages/extra/x86_64/libnotify/ "paquet libnotify") et un serveur de notification en cours d'exécution) :
+Vous pouvez alors voir la liste des mises à jour disponibles dans l'infobulle de l'icône du systray en passant votre souris dessus :
 
-![notif_fr](https://github.com/user-attachments/assets/16090810-157d-466b-86d4-70b5ed8091b5)
+![tooltip_fr](https://github.com/user-attachments/assets/8bc3d339-f7ab-4c8b-aa3f-2b88ea68af42)
 
-Quand l'applet systray est cliquée, elle affiche la liste des paquets disponibles pour la mise à jour dans une fenêtre de terminal et demande la confirmation de l'utilisateur pour procéder à l'installation (peut aussi être lancé en exécutant la commande `arch-update`, requiert [yay](https://aur.archlinux.org/packages/yay "yay") ou [paru](https://aur.archlinux.org/packages/paru "paru") pour le support des paquets AUR et [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) pour le support des paquets Flatpak).
+Alternativement, vous pouvez voir la liste des mises à jour disponible dans le menu déroulant en faisant un clic droit sur l'icône du systray :
+
+![dropdown_menu_fr](https://github.com/user-attachments/assets/60c3c0d8-8091-4047-b8da-ce8f8bc72476)
+
+Quand l'icône du systray est cliquée, elle affiche la liste des paquets disponibles pour la mise à jour dans une fenêtre de terminal et demande la confirmation de l'utilisateur pour procéder à l'installation (peut aussi être lancé en exécutant la commande `arch-update`, requiert [yay](https://aur.archlinux.org/packages/yay "yay") ou [paru](https://aur.archlinux.org/packages/paru "paru") pour le support des paquets AUR et [flatpak](https://archlinux.org/packages/extra/x86_64/flatpak/) pour le support des paquets Flatpak).
 
 ![listing_packages-FR](https://github.com/Antiz96/arch-update/assets/53110319/60547cde-f327-46f8-907c-61bf9bbee6c5)
 
@@ -182,7 +188,7 @@ de fichiers pacnew & pacsave, de mise à jour du noyau en attente ainsi que des 
 et, s'il y en a, propose de les traiter.
 
 Options :
--c, --check       Vérifier les mises à jour disponibles, changer l'icône systray et envoyer une notification de bureau contenant le nombre de mises à jour disponibles (s'il y a des nouvelles mises à jour disponibles depuis le dernier check)
+-c, --check       Vérifier les mises à jour disponibles, changer l'icône du systray et envoyer une notification de bureau contenant le nombre de mises à jour disponibles (s'il y a des nouvelles mises à jour disponibles depuis le dernier check)
 -l, --list        Afficher la liste des mises à jour en attente
 -d, --devel       Inclure les mises à jour des paquets de développement AUR
 -n, --news [Num]  Afficher les dernieres Arch News, vous pouvez optionellement spécifier le nombre de Arch news à afficher avec `--news [Num]` (e.g. `--news 10`)
@@ -261,6 +267,27 @@ Voir <https://www.flatpak.org/> et <https://archlinux.org/packages/extra/x86_64/
 
 Arch-Update prend en charge les notifications de bureau lors de l'exécution de la fonction `--check` si **libnotify** est installé (et qu'un serveur de notification est en cours d'exécution) :  
 Voir <https://wiki.archlinux.org/title/Desktop_notifications>
+
+### L'applet systray ne démarre pas au démarrage du système
+
+Assurez vous d'avoir suivi les instructions de [ce chapitre](#lapplet-systray).
+
+Si l'applet systray ne démarre pas malgré tout, cela peut être le résultat d'une [situation de compétition](https://fr.wikipedia.org/wiki/Situation_de_comp%C3%A9tition).  
+Dans ce cas, il peut être utile de légèrement retarder le démarrage de l'applet systray en utilisant une déclaration `sleep` au préalable :
+
+- Si vous avez utilisé `arch-update --tray --enable`, modifiez la ligne `Exec=` dans le fichier `arch-update-tray.desktop` (qui se trouve sous `~/.config/autostart/` par défaut), comme ceci :
+
+> Exec=sh -c "sleep 3 && arch-update --tray"
+
+- Si vous avez utilisé le service systemd `arch-update-tray.service`, exécutez `systemctl --user edit --full arch-update-tray.service` et modifiez la ligne `ExecStart=`, comme ceci :
+
+> ExecStart=sh -c "sleep 3 && arch-update --tray"
+
+- Si vous utilisez un gestionnaire de fenêtres ou un compositeur Wayland, ajoutez une déclaration `sleep` avant la commande `arch-update --tray` dans vos applications "auto-start" dans votre fichier de configuration, comme ceci :
+
+> `sleep 3 && arch-update --tray`
+
+Si l'applet systray ne démarre toujours au démarrage du système, essayez de graduellement augmenter la valeur du `sleep`.
 
 ### Modifier le cycle de vérification automatique
 
