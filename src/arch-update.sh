@@ -7,7 +7,7 @@
 # General variables
 name="arch-update"
 _name="Arch-Update"
-version="3.3.0"
+version="3.4.0"
 option="${1}"
 
 # Define the directory containing libraries
@@ -44,7 +44,7 @@ case "${option}" in
 		source "${libdir}/full_upgrade.sh"
 	;;
 	-d|--devel)
-		# Set the "--devel" flag for AUR helpers (yay / paru)
+		# Set the "--devel" flag for AUR helpers
 		devel_flag+=("--devel")
 
 		# Source the "full_upgrade" library which executes the series of relevant functions / libraries to perform a complete and proper update of the system

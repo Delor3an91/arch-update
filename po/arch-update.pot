@@ -6,7 +6,7 @@
 # AUTHOR <EMAIL@ADDRESS>, YEAR
 msgid ""
 msgstr ""
-"Project-Id-Version: Arch-Update 3.3.0\n"
+"Project-Id-Version: Arch-Update 3.4.0\n"
 "Report-Msgid-Bugs-To: https://github.com/Antiz96/arch-update/issues\n"
 "POT-Creation-Date: 2024-03-17 16:22+0100\n"
 "PO-Revision-Date: YEAR-MO-DA HO:MI+ZONE\n"
@@ -46,26 +46,26 @@ msgstr ""
 msgid "Press \"enter\" to quit "
 msgstr ""
 
-#: src/lib/common.sh:123
+#: src/lib/common.sh:126
 #, sh-format
 msgid ""
 "The ${aur_helper} AUR helper set for AUR packages support in the arch-update."
 "conf configuration file is not found\\n"
 msgstr ""
 
-#: src/lib/common.sh:145
+#: src/lib/common.sh:148
 #, sh-format
 msgid "A privilege elevation command is required (sudo, doas or run0)\\n"
 msgstr ""
 
-#: src/lib/common.sh:150
+#: src/lib/common.sh:153
 #, sh-format
 msgid ""
 "The ${su_cmd} command set for privilege escalation in the arch-update.conf "
 "configuration file is not found\\n"
 msgstr ""
 
-#: src/lib/common.sh:158
+#: src/lib/common.sh:161
 #, sh-format
 msgid ""
 "The ${diff_prog} editor set for visualizing / editing differences of pacnew "
@@ -471,7 +471,8 @@ msgstr ""
 
 #: src/lib/packages_cache.sh:24
 #, sh-format
-msgid "Cached Packages:\\nThere are old and/or uninstalled cached packages\\n"
+msgid ""
+"Cached Packages:\\nThere are old and / or uninstalled cached packages\\n"
 msgstr ""
 
 #: src/lib/packages_cache.sh:25
