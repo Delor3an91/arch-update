@@ -51,4 +51,4 @@ fi
 [ -z "${news_num}" ] && news_num="5"
 [ -z "${old_packages_num}" ] && old_packages_num="3"
 [ -z "${uninstalled_packages_num}" ] && uninstalled_packages_num="0"
-[ -z "${tray_icon_style}" ] && tray_icon_style="cachyos"
+[ -z "${tray_icon_style}" ] && tray_icon_style="light"
