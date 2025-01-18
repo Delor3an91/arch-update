@@ -7,12 +7,12 @@
 # General variables
 name="arch-update"
 _name="Arch-Update"
-version="3.4.2"
+version="3.5.0"
 option="${1}"
 
 # Define the directory containing libraries
-if [ -n "${TEST_LIBDIR}" ]; then # Used in bats test cases for `make test`
-	libdir="${TEST_LIBDIR}"
+if [ -n "${ARCH_UPDATE_LIBDIR}" ]; then
+	libdir="${ARCH_UPDATE_LIBDIR}"
 elif [ -d "${XDG_DATA_HOME}/${name}/lib" ]; then
         libdir="${XDG_DATA_HOME}/${name}/lib"
 elif [ -d "${HOME}/.local/share/${name}/lib" ]; then

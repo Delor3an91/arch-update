@@ -2,6 +2,27 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.5.0](https://github.com/Antiz96/arch-update/releases/tag/v3.5.0) - 2025-01-18
+
+### Features
+
+- Add support for the DiffProg option when using doas ([#295](https://github.com/Antiz96/arch-update/pull/295)) - ([0fa90ec](https://github.com/Antiz96/arch-update/commit/0fa90ecb8c56157025edbfaed589c92047335ac1)) by @l-pt
+
+### Miscellaneous
+
+- Update release workflow ([#294](https://github.com/Antiz96/arch-update/pull/294)) - ([ee4867b](https://github.com/Antiz96/arch-update/commit/ee4867bc2e427502fc092c65cebab6cc53766cb1)) by @Antiz96
+
+## [v3.4.3](https://github.com/Antiz96/arch-update/releases/tag/v3.4.3) - 2025-01-17
+
+### Fixes
+
+- Update Author and Date tags parsing in news ([#292](https://github.com/Antiz96/arch-update/pull/292)) - ([96b9481](https://github.com/Antiz96/arch-update/commit/96b9481579195407be39796ea9401680b86e4d36)) by @qhorgues
+
+### Miscellaneous
+
+- Rename LIBDIR env var ([#293](https://github.com/Antiz96/arch-update/pull/293)) - ([6106880](https://github.com/Antiz96/arch-update/commit/610688020cb41f6732e7d872f0840af4fcb00b2c)) by @Antiz96
+- Optimize news path parsing when listing Arch news ([#290](https://github.com/Antiz96/arch-update/pull/290)) - ([4b2f6c5](https://github.com/Antiz96/arch-update/commit/4b2f6c5702d76bb3f6694c66bd61af3af41370fa)) by @Antiz96
+
 ## [v3.4.2](https://github.com/Antiz96/arch-update/releases/tag/v3.4.2) - 2024-12-06
 
 ### Fixes
