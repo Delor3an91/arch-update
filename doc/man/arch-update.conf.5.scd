@@ -1,4 +1,4 @@
-arch-update.conf(5) ["Arch-Update 3.6.1" ["Arch-Update Manual"]]
+arch-update.conf(5) ["Arch-Update 3.7.0" ["Arch-Update Manual"]]
 
 # NAME
 
@@ -25,6 +25,12 @@ Options are case sensitive, so capital letters have to be respected.
 
 *NoVersion*
 	Do not show versions changes for packages when listing pending updates (including when using the `-l / --list` option, see the *arch-update*(1) man page for more details).
+
+*NoAUR*
+	Ignore AUR packages support.
+
+*NoFlatpak*
+	Ignore Flatpak packages support.
 
 *NoNotification*
 	Do not send desktop notifications.

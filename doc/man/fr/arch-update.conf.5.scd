@@ -1,4 +1,4 @@
-arch-update.conf(5) ["Arch-Update 3.6.1" ["Manuel de Arch-Update"]]
+arch-update.conf(5) ["Arch-Update 3.7.0" ["Manuel de Arch-Update"]]
 
 # NOM
 
@@ -25,6 +25,12 @@ Les options sont sensibles à la casse, les majuscules doivent donc être respec
 
 *NoVersion*
 	Ne pas afficher les modifications de versions des paquets lors du listing des mises à jour en attente (y compris lors de l'utilisation de l'option `-l / --list`, voir la page de manuel *arch-update*(1) pour plus de détails).
+
+*NoAUR*
+	Ignorer la prise en charge des paquets AUR.
+
+*NoFlatpak*
+	Ignorer la prise en charge des paquets Flatpak.
 
 *NoNotification*
 	Ne pas envoyer de notifications de bureau.
