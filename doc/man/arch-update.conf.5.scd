@@ -1,4 +1,4 @@
-arch-update.conf(5) ["Arch-Update 3.7.0" ["Arch-Update Manual"]]
+arch-update.conf(5) ["Arch-Update 3.9.0" ["Arch-Update Manual"]]
 
 # NAME
 
@@ -38,6 +38,9 @@ Options are case sensitive, so capital letters have to be respected.
 *NewsNum=[Num]*
 	Number of Arch news to display before updating and with the `-n / --news` option (see the *arch-update*(1) man page for more details). Defaults to 5.
 
+*NewsTimeout=[Num]*
+	Timeout threshold for the Arch news check requests. The value is expressed in seconds and has to be an integer. Setting this option to "0" results in no timeout (no time limit for requests to complete). Defaults to 10.
+
 *AURHelper=[AUR Helper]*
 	AUR helper to be used for AUR packages support. Valid values are `paru`, `yay` or `pikaur`. If this option is not set, Arch-Update will use the first AUR helper available in the following order: `paru` then `yay` then `pikaur` (in case none of them is installed, Arch-Update will not take AUR packages into account).
 
@@ -45,10 +48,10 @@ Options are case sensitive, so capital letters have to be respected.
 	Command to be used for privilege elevation. Valid values are `sudo`, `doas` or `run0`. If this option is not set, Arch-Update will use the first command available in the following order: `sudo`, `doas` then `run0`.
 
 *KeepOldPackages=[Num]*
-	Number of old packages' versions to keep in pacman's cache. Defaults to 3.
+	Number of old packages versions to keep in pacman's cache. Defaults to 3.
 
 *KeepUninstalledPackages=[Num]*
-	Number of uninstalled packages' versions to keep in pacman's cache. Defaults to 0.
+	Number of uninstalled packages versions to keep in pacman's cache. Defaults to 0.
 
 *DiffProg=[Editor]*
 	Editor to use to visualize / edit differences during the pacnew files processing. Defaults to the `$DIFFPROG` environment variable's value (or `vimdiff` if `$DIFFPROG` isn't set).

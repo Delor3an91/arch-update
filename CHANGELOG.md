@@ -2,6 +2,120 @@
 
 All notable changes to this project will be documented in this file.
 
+## [v3.9.0](https://github.com/Antiz96/arch-update/releases/tag/v3.9.0) - 2025-03-29
+
+### Features
+
+- *(i18n)* Add German translation ([#346](https://github.com/Antiz96/arch-update/pull/346)) - ([5224d8a](https://github.com/Antiz96/arch-update/commit/5224d8a3c76811dd44bcec3bbbf84c2f958d66c5)) by @DeN-AlB
+- *(systray)* Add dropdown sub-menus for earch sources of available updates ([#348](https://github.com/Antiz96/arch-update/pull/348)) - ([75e2239](https://github.com/Antiz96/arch-update/commit/75e2239216a12dc2032831e15152653642bbc0d6)) by @Antiz96
+
+### Fixes
+
+- *(check)* Fix state files names ([#349](https://github.com/Antiz96/arch-update/pull/349)) - ([277ba96](https://github.com/Antiz96/arch-update/commit/277ba962c4e439f280ce81b7dffffaf49fbac8d3)) by @Antiz96
+- *(systray)* Fix 'Packages' sub-menu name ([#350](https://github.com/Antiz96/arch-update/pull/350)) - ([68b26f2](https://github.com/Antiz96/arch-update/commit/68b26f2451622ea37c1690763e884f3ab6f469f7)) by @Antiz96
+
+### Documentation
+
+- *(README)* Update screenshots ([#352](https://github.com/Antiz96/arch-update/pull/352)) - ([818d298](https://github.com/Antiz96/arch-update/commit/818d2988efd1eee22155464b384fefcafe09ee39)) by @Antiz96
+
+### Styling
+
+- *(changelog)* Remove unnecessary space ([#345](https://github.com/Antiz96/arch-update/pull/345)) - ([71782fe](https://github.com/Antiz96/arch-update/commit/71782fe08176862c5b97ef37fb3e73ad45cf5843)) by @Antiz96
+- *(i18n)* Fix a word in Hungarian translation ([#344](https://github.com/Antiz96/arch-update/pull/344)) - ([f1aa1bb](https://github.com/Antiz96/arch-update/commit/f1aa1bb7e4f4eaaa4729f990294a34564cdb74de)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update translations ([#353](https://github.com/Antiz96/arch-update/pull/353)) - ([4148709](https://github.com/Antiz96/arch-update/commit/414870977cf214359e171b247a22afd536749a42)) by @Antiz96
+- *(i18n)* Update French translation ([#351](https://github.com/Antiz96/arch-update/pull/351)) - ([2a9b104](https://github.com/Antiz96/arch-update/commit/2a9b104aa236bb6ab9d26d7bdf70583459d2a869)) by @Antiz96
+
+## [v3.8.1](https://github.com/Antiz96/arch-update/releases/tag/v3.8.1) - 2025-03-21
+
+### Features
+
+- feat(i18n): add Hungarian translation ([#340](https://github.com/Antiz96/arch-update/pull/340)) - ([a297dfd](https://github.com/Antiz96/arch-update/commit/a297dfdfe696f31f8f5bb6878b2998d45038cea3)) by @Impostor0729
+
+### Miscellaneous
+
+- *(i18n)* Update the logic to set the path to translation files ([#342](https://github.com/Antiz96/arch-update/pull/342)) - ([b0c301a](https://github.com/Antiz96/arch-update/commit/b0c301ae9d5451514fc64636d05aa7cc28f219ba)) by @Antiz96
+
+## [v3.8.0](https://github.com/Antiz96/arch-update/releases/tag/v3.8.0) - 2025-03-18
+
+### Features
+
+- *(news)* Set a more reasonable default for Arch news requests timeout and allow to customize it via the NewsTimeout option in the config file ([#335](https://github.com/Antiz96/arch-update/pull/335)) - ([666575c](https://github.com/Antiz96/arch-update/commit/666575c2619c11ae31c6c0478ebc26bb161f09fd)) by @Antiz96
+
+### Styling
+
+- Fix some typos and outdated comments in Makefile ([#338](https://github.com/Antiz96/arch-update/pull/338)) - ([02eff54](https://github.com/Antiz96/arch-update/commit/02eff54952803e960fe9e1119dfd6d1fc2d9df66)) by @Antiz96
+- Slight style improvements in man page ([#336](https://github.com/Antiz96/arch-update/pull/336)) - ([ca3ae12](https://github.com/Antiz96/arch-update/commit/ca3ae120ea3c06979c07fad8131b30253934c927)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update lines in translation files ([#337](https://github.com/Antiz96/arch-update/pull/337)) - ([e6ef2cf](https://github.com/Antiz96/arch-update/commit/e6ef2cfd3b5fde4f11c7c061b1c3f5a29ffa7c25)) by @Antiz96
+- Add .gitignore ([#339](https://github.com/Antiz96/arch-update/pull/339)) - ([1ce8ca5](https://github.com/Antiz96/arch-update/commit/1ce8ca531c02bf99540a2e952f5ec0e8708dad17)) by @Antiz96
+
+## [v3.7.6](https://github.com/Antiz96/arch-update/releases/tag/v3.7.6) - 2025-03-14
+
+### Features
+
+- *(i18n)* Add zh_CN - Chinese (simplified) translation ([#330](https://github.com/Antiz96/arch-update/pull/330)) - ([4c75406](https://github.com/Antiz96/arch-update/commit/4c754061911550174dfe426410337ec87e23fd05)) by @Carlson24
+
+### Fixes
+
+- *(Makefile)* Fix incorrect paths in uninstall target and add the missing Swedish translation files ([#332](https://github.com/Antiz96/arch-update/pull/332)) - ([aea604a](https://github.com/Antiz96/arch-update/commit/aea604a34c5bb5022e0fdda889794b8f69132e72)) by @Cardiacman13
+
+## [v3.7.5](https://github.com/Antiz96/arch-update/releases/tag/v3.7.5) - 2025-03-04
+
+### Fixes
+
+- *(kernel_reboot)* Don't source the kernel_reboot lib in WSL ([#328](https://github.com/Antiz96/arch-update/pull/328)) - ([06910e1](https://github.com/Antiz96/arch-update/commit/06910e14ac031295d3473699c517258fc2f6b290)) by @Antiz96
+
+### Styling
+
+- Fix typos in comments ([#329](https://github.com/Antiz96/arch-update/pull/329)) - ([d97b98e](https://github.com/Antiz96/arch-update/commit/d97b98e40e36f9d69f038628338b2a4aa5753633)) by @Antiz96
+
+## [v3.7.4](https://github.com/Antiz96/arch-update/releases/tag/v3.7.4) - 2025-02-23
+
+### Documentation
+
+- Enhance documentation about race condition ([#326](https://github.com/Antiz96/arch-update/pull/326)) - ([ab028d1](https://github.com/Antiz96/arch-update/commit/ab028d107368136ac842dc9b2ad17e00492d1d96)) by @Antiz96
+
+### Miscellaneous
+
+- *(i18n)* Update po files ([#325](https://github.com/Antiz96/arch-update/pull/325)) - ([6c1b665](https://github.com/Antiz96/arch-update/commit/6c1b665e9bb628cf4113fb309b22000297b792fd)) by @Antiz96
+
+## [v3.7.3](https://github.com/Antiz96/arch-update/releases/tag/v3.7.3) - 2025-02-20
+
+### Styling
+
+- Fix typos in systray python script ([#323](https://github.com/Antiz96/arch-update/pull/323)) - ([d322020](https://github.com/Antiz96/arch-update/commit/d3220209537a26327af55c961f18079fd16cf6e6)) by @Antiz96
+
+### Miscellaneous
+
+- Little rework of the systray applet python script ([#322](https://github.com/Antiz96/arch-update/pull/322)) - ([169e00e](https://github.com/Antiz96/arch-update/commit/169e00e262d8b3782d33aeaaae22e8772c44a715)) by @Antiz96
+- Remove the list of pending updates from the systray's tooltip ([#321](https://github.com/Antiz96/arch-update/pull/321)) - ([f51cf89](https://github.com/Antiz96/arch-update/commit/f51cf897774bd82fec939b7733e15fc9161ff47f)) by @Antiz96
+- Make scripts more robust when using `mkdir` ([#320](https://github.com/Antiz96/arch-update/pull/320)) - ([b2af443](https://github.com/Antiz96/arch-update/commit/b2af443f59de987d43114efb86dc1537219e6210)) by @Antiz96
+
+## [v3.7.2](https://github.com/Antiz96/arch-update/releases/tag/v3.7.2) - 2025-02-17
+
+### Styling
+
+- Remove unconventional dots from output ([#318](https://github.com/Antiz96/arch-update/pull/318)) - ([1201252](https://github.com/Antiz96/arch-update/commit/12012527b4da0b70e584d9eb13be48e968609a29)) by @Antiz96
+
+### Miscellaneous
+
+- *(man)* Don't compress man pages during build ([#317](https://github.com/Antiz96/arch-update/pull/317)) - ([b60600e](https://github.com/Antiz96/arch-update/commit/b60600e6c3fd17de4f37c8f5855d6dca744ac0c6)) by @Antiz96
+
+## [v3.7.1](https://github.com/Antiz96/arch-update/releases/tag/v3.7.1) - 2025-02-07
+
+### Documentation
+
+- Update man page link in default / example configuration file ([#312](https://github.com/Antiz96/arch-update/pull/312)) - ([65e24bc](https://github.com/Antiz96/arch-update/commit/65e24bcce95ec6e568cc3d466498cf218ddcacd7)) by @Antiz96
+
+### Miscellaneous
+
+- Get rid of gzip timestamps during build to make Arch-Update reproducible ([#314](https://github.com/Antiz96/arch-update/pull/314)) - ([905f641](https://github.com/Antiz96/arch-update/commit/905f6413ba629db527a931a866e9f6f55bb211c3)) by @Antiz96
+
 ## [v3.7.0](https://github.com/Antiz96/arch-update/releases/tag/v3.7.0) - 2025-01-27
 
 ### Features

@@ -120,7 +120,7 @@ systemctl --user enable --now arch-update-tray.service
 arch-update --tray
 ```
 
-**If the systray applet doesn't start at boot regardless**, please read [this chapter](#the-systray-applet-does-not-start-at-boot).
+**If the systray applet doesn't start at boot regardless or if it doesn't work as expected** (e.g the icon is missing or the click actions do not act as they should), please read [this chapter](#the-systray-applet-does-not-start-at-boot-or-does-not-work-as-expected).
 
 The systray icon dynamically changes to indicate the current state of your system ('up to date' or 'updates available'). When clicked, it launches `arch-update` in a terminal window via the [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop) file.
 
@@ -149,15 +149,17 @@ With [the systemd timer](#the-systemd-timer) enabled, checks for updates are aut
 
 If there are new available updates, the systray icon shows a red circle and a desktop notification indicating the number of available updates is sent:
 
-![notif](https://github.com/user-attachments/assets/55301470-fab6-463f-af2e-ebe4e3d65af7)
+![notif](https://github.com/user-attachments/assets/0df49fe0-2346-424c-b843-081e4ea21b51)
 
-You can then see the list of available updates in the systray icon's tooltip by hovering your mouse over it:
+You can see the list of available updates in the dropdown menu entry by right-clicking the systray icon.  
+A sub-menu displaying the number and the list of pending updates is dynamically created for each sources that have some (Packages, AUR, Flatpak).  
+A "All" sub-menu gathering the number and the list of pending updates for all sources is dynamically created if at least 2 different sources have pending updates:
 
-![tooltip](https://github.com/user-attachments/assets/52ee0608-a8a2-4be9-ba9b-badeb8720ba1)
+![dropdown_menu](https://github.com/user-attachments/assets/282d9226-4787-4d73-b376-d5eb6bb8f400)
 
-Alternatively, you can see the list of available updates in the dropdown menu entry by right-clicking the systray icon:
+![sub_menu1](https://github.com/user-attachments/assets/4b6cd5c6-b23e-4a0d-a2d8-6581adb3593e)
 
-![dropdown_menu](https://github.com/user-attachments/assets/4621d7d2-a9e4-40c3-851f-ee1687e6cf1e)
+![sub_menu2](https://github.com/user-attachments/assets/d7a427cb-fd88-4e0d-92cb-fd1a2de61b45)
 
 When the systray icon is left-clicked, it runs `arch-update` in a terminal window:
 
@@ -186,11 +188,12 @@ See the [arch-update.conf(5) man page](https://github.com/Antiz96/arch-update/bl
 
 ## Tips and tricks
 
-### The systray applet does not start at boot
+### The systray applet does not start at boot or does not work as expected
 
 Make sure you followed instructions of [this chapter](#the-systray-applet).
 
-If the systray applet doesn't start regardless, this could be the result of a [race condition](https://en.wikipedia.org/wiki/Race_condition#In_software).  
+If the systray applet doesn't start at boot regardless or if it doesn't work as expected (e.g the icon is missing or the click actions do not act as they should), this could be the result of a [race condition](https://en.wikipedia.org/wiki/Race_condition#In_software).
+
 To prevent that, you can add a small delay to the systray applet startup using the `sleep` command:
 
 - If you used `arch-update --tray --enable`, modify the `Exec=` line in the `arch-update-tray.desktop` file (which is under `~/.config/autostart/` by default), like so:

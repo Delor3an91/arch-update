@@ -120,7 +120,7 @@ systemctl --user enable --now arch-update-tray.service
 arch-update --tray
 ```
 
-**Si l'applet systray ne démarre pas au démarrage du système malgré tout**, veuillez lire [ce chapitre](#lapplet-systray-ne-démarre-pas-au-démarrage-du-système).
+**Si l'applet systray ne démarre pas au démarrage du système malgré tout ou si elle ne marche pas comme prévu** (par exemple si l'icône est manquante ou que les actions de cliques ne fonctionnent pas comme elles devraient), veuillez lire [ce chapitre](#lapplet-systray-ne-démarre-pas-au-démarrage-du-système-ou-ne-marche-pas-comme-prévu).
 
 L'icône du systray change dynamiquement pour indiquer l'état actuel de votre système ('à jour' ou 'mises à jour disponibles'). Lorsque vous cliquez dessus, elle lance `arch-update` dans une fenêtre de terminal via le fichier [arch-update.desktop](https://github.com/Antiz96/arch-update/blob/main/res/desktop/arch-update.desktop).
 
@@ -149,15 +149,17 @@ Avec [le timer systemd](#le-timer-systemd) activé, les vérifications des mises
 
 Si de nouvelles mises à jour sont disponibles, l'icône du systray affiche un cercle rouge et une notification de bureau indiquant le nombre de mises à jour disponibles est envoyée :
 
-![notif_fr](https://github.com/user-attachments/assets/56d72147-bde4-492b-8ad1-20caed9f22a9)
+![notif_fr](https://github.com/user-attachments/assets/1ffd0b47-ecc9-462b-aa18-0e88b726da77)
 
-Vous pouvez alors voir la liste des mises à jour disponibles dans l'infobulle de l'icône du systray en passant votre souris dessus :
+Vous pouvez voir la liste des mises à jour disponible dans le menu déroulant en faisant un clic droit sur l'icône du systray.  
+Un sous-menu contenant le nombre et la liste des mises à jour disponibles est dynamiquement créé pour chaque sources qui en possède (Paquets, AUR, Flatpak).  
+Un sous-menu "Tous" affichant le nombre et la liste des mises à jour en attente pour toutes les sources est créé dynamiquement si au moins 2 sources différentes ont des mises à jour en attente :
 
-![tooltip_fr](https://github.com/user-attachments/assets/8bc3d339-f7ab-4c8b-aa3f-2b88ea68af42)
+![dropdown_menu_fr](https://github.com/user-attachments/assets/5517ae1b-eb42-443f-901a-0b480841071b)
 
-Autrement, vous pouvez voir la liste des mises à jour disponible dans le menu déroulant en faisant un clic droit sur l'icône du systray :
+![sub_menu_fr1](https://github.com/user-attachments/assets/139e864f-94c1-4c28-8999-a28cb678bea3)
 
-![dropdown_menu_fr](https://github.com/user-attachments/assets/60c3c0d8-8091-4047-b8da-ce8f8bc72476)
+![sub_menu_fr2](https://github.com/user-attachments/assets/73571b5c-1307-47d2-8cd5-9ef197ed3e88)
 
 Quand l'icône du systray est cliquée, elle lance `arch-update` dans une fenêtre de terminal :
 
@@ -186,11 +188,12 @@ Voir la [page de manuel arch-update.conf(5)](https://github.com/Antiz96/arch-upd
 
 ## Trucs et astuces
 
-### L'applet systray ne démarre pas au démarrage du système
+### L'applet systray ne démarre pas au démarrage du système ou ne marche pas comme prévu
 
 Assurez vous d'avoir suivi les instructions de [ce chapitre](#lapplet-systray).
 
-Si l'applet systray ne démarre pas malgré tout, cela peut être le résultat d'une [situation de compétition](https://fr.wikipedia.org/wiki/Situation_de_comp%C3%A9tition).  
+Si l'applet systray ne démarre pas au démarrage du système malgré tout ou si elle ne marche pas comme prévu (par exemple si l'icône est manquante ou que les actions de cliques ne fonctionnent pas comme elles devraient), cela peut être le résultat d'une [situation de compétition](https://fr.wikipedia.org/wiki/Situation_de_comp%C3%A9tition).
+
 Pour éviter ceci, vous pouvez ajouter un léger délai au démarrage de l'applet systray en utilisant la commande `sleep` :
 
 - Si vous avez utilisé `arch-update --tray --enable`, modifiez la ligne `Exec=` dans le fichier `arch-update-tray.desktop` (qui se trouve sous `~/.config/autostart/` par défaut), comme ceci :
